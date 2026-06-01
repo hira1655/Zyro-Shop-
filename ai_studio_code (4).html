@@ -1,0 +1,2146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zyro | Premium Women's Fashion</title>
+    
+    <!-- Google Fonts & Iconography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary: #ff5c8a;         /* Chic energetic pink */
+            --primary-hover: #e01e5a;   /* Slightly deeper red-pink */
+            --primary-light: #fff0f3;   /* Pastel blush background tint */
+            --primary-accent: #ffb3c1;  /* Outline pink accent */
+            --bg-body: #faf9f9;         /* Off-white background */
+            --dark: #222222;            /* Dark slate */
+            --muted: #7d7d8a;           /* Muted text gray */
+            --border: #f0e1e4;          /* Soft pinkish grey borders */
+            --shadow: 0 4px 18px rgba(255, 92, 138, 0.05);
+            --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            outline: none;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--dark);
+            overflow-x: hidden;
+            line-height: 1.5;
+        }
+
+        /* Top Announcement bar */
+        .announcement-bar {
+            background-color: #ff3b6c;
+            color: #ffffff;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 8px;
+            letter-spacing: 0.05em;
+        }
+
+        /* Header Layout & Navigation */
+        header {
+            background: #ffffff;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark);
+            text-decoration: none;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .search-container {
+            flex-grow: 1;
+            max-width: 480px;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .search-container input {
+            width: 100%;
+            padding: 10px 18px;
+            padding-right: 45px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            font-size: 0.85rem;
+            background-color: #fff;
+            transition: var(--transition);
+        }
+
+        .search-container input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 92, 138, 0.15);
+        }
+
+        .search-container button {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: none;
+            color: var(--muted);
+            cursor: pointer;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .header-action-item {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .header-action-item i {
+            font-size: 1.15rem;
+            color: var(--dark);
+        }
+
+        .header-action-item:hover i,
+        .header-action-item:hover span {
+            color: var(--primary);
+        }
+
+        .badge {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background-color: var(--primary);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 700;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-nav {
+            background-color: #fff;
+            border-top: 1px solid rgba(255, 92, 138, 0.08);
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            padding: 12px 0;
+        }
+
+        .header-nav a {
+            text-decoration: none;
+            color: var(--dark);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .header-nav a:hover, .header-nav a.active {
+            color: var(--primary);
+        }
+
+        /* Container Limit Wrapper */
+        .main-container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 20px 2%;
+        }
+
+        /* Home View Components */
+        .hero-banner {
+            width: 100%;
+            background-color: var(--primary-light);
+            border-radius: 12px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            margin-bottom: 40px;
+            min-height: 480px;
+        }
+
+        .hero-content {
+            padding: 50px;
+        }
+
+        .hero-content .tag {
+            background: #ffffff;
+            color: var(--primary-hover);
+            padding: 5px 14px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .hero-content p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-bottom: 30px;
+            max-width: 440px;
+        }
+
+        .hero-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            transition: var(--transition);
+            border: 1px solid var(--primary);
+        }
+
+        .hero-btn:hover {
+            background-color: transparent;
+            color: var(--primary);
+        }
+
+        .hero-image {
+            height: 100%;
+            min-height: 400px;
+            background: url('https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+        }
+
+        .section-headline {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-headline h2 {
+            font-size: 2rem;
+            letter-spacing: -0.5px;
+        }
+
+        .section-headline p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Products Grid Layout (Shared) */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        /* Dynamic Product Cards */
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(255, 92, 138, 0.08);
+            border-color: var(--primary-accent);
+        }
+
+        .card-img-holder {
+            width: 100%;
+            height: 310px;
+            background-color: #f7f7f7;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-img-holder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-img-holder img {
+            transform: scale(1.05);
+        }
+
+        .card-discount-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #ff3b6c;
+            color: #ffffff;
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .card-quick-add {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background-color: #ffffff;
+            color: var(--primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .card-quick-add:hover {
+            background-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .card-body {
+            padding: 16px;
+        }
+
+        .card-title {
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .card-prices {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .current-price {
+            font-weight: 700;
+            color: var(--primary-hover);
+            font-size: 1.05rem;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+
+        /* Shop Catalog View Components (Sidebar layout match) */
+        .shop-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 30px;
+        }
+
+        /* Sidebar list styling */
+        .shop-sidebar {
+            background-color: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            height: fit-content;
+        }
+
+        .sidebar-section-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--primary-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .category-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .category-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.88rem;
+            color: var(--dark);
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 4px 0;
+        }
+
+        .category-item:hover, .category-item.active {
+            color: var(--primary);
+            font-weight: 600;
+            padding-left: 5px;
+        }
+
+        .category-count {
+            background-color: var(--primary-light);
+            color: var(--primary-hover);
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 10px;
+        }
+
+        /* Top Filter area in Catalog View */
+        .catalog-main-header {
+            background-color: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .active-chips {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .chip {
+            background-color: var(--primary-light);
+            color: var(--primary-hover);
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chip i {
+            cursor: pointer;
+            font-size: 0.7rem;
+        }
+
+        .sort-select select {
+            border: 1px solid var(--border);
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            color: var(--dark);
+            background-color: #fff;
+        }
+
+        /* Product Detail Page Layout */
+        .pdp-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 50px;
+        }
+
+        .pdp-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .pdp-main-image {
+            width: 100%;
+            height: 580px;
+            background-color: #faf9f9;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .pdp-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pdp-thumbnails {
+            display: flex;
+            gap: 12px;
+        }
+
+        .pdp-thumb {
+            width: 80px;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .pdp-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pdp-thumb.active, .pdp-thumb:hover {
+            border-color: var(--primary);
+        }
+
+        /* PDP Right Side controls */
+        .pdp-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pdp-title {
+            font-size: 1.85rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .pdp-brand {
+            font-size: 0.82rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .pdp-price-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 22px;
+        }
+
+        .pdp-price {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--primary-hover);
+        }
+
+        .pdp-price-old {
+            font-size: 1.15rem;
+            text-decoration: line-through;
+            color: var(--muted);
+        }
+
+        .pdp-desc {
+            font-size: 0.92rem;
+            color: var(--muted);
+            line-height: 1.65;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .option-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            color: var(--dark);
+        }
+
+        .sizes-group {
+            margin-bottom: 25px;
+        }
+
+        .size-chips {
+            display: flex;
+            gap: 12px;
+        }
+
+        .size-chip {
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            background: #ffffff;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .size-chip:hover, .size-chip.active {
+            border-color: var(--primary);
+            background-color: var(--primary-light);
+            color: var(--primary-hover);
+        }
+
+        /* Action block */
+        .actions-block {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+
+        .qty-adjuster {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #ffffff;
+            overflow: hidden;
+            height: 48px;
+        }
+
+        .qty-adjuster button {
+            width: 40px;
+            height: 100%;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        .qty-adjuster button:hover {
+            background-color: var(--primary-light);
+            color: var(--primary-hover);
+        }
+
+        .qty-adjuster span {
+            width: 40px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .add-bag-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            padding: 0 35px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-grow: 1;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .add-bag-btn:hover {
+            background-color: var(--primary-hover);
+            box-shadow: 0 4px 15px rgba(255, 92, 138, 0.25);
+        }
+
+        /* Trust Badges */
+        .trust-badges {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 35px;
+        }
+
+        .trust-card {
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .trust-card i {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .trust-card strong {
+            color: var(--dark);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Specs table style */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 0.85rem;
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid #f5eaec;
+        }
+
+        .specs-table td {
+            padding: 10px 5px;
+        }
+
+        .specs-table td.label-td {
+            font-weight: 600;
+            color: var(--muted);
+            width: 150px;
+        }
+
+        .specs-table td.value-td {
+            color: var(--dark);
+        }
+
+        /* Frequently bought bundle system */
+        .bundle-box {
+            background-color: var(--primary-light);
+            border: 1px dashed var(--primary-accent);
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .bundle-box-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 15px;
+            color: var(--primary-hover);
+        }
+
+        .bundle-combo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .bundle-item-avatar {
+            width: 60px;
+            height: 75px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
+
+        .plus-sign {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .bundle-details {
+            font-size: 0.85rem;
+        }
+
+        .bundle-details p {
+            margin-bottom: 3px;
+        }
+
+        .bundle-action-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid rgba(255, 92, 138, 0.15);
+            padding-top: 12px;
+        }
+
+        .bundle-check-label {
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .bundle-check-label input {
+            accent-color: var(--primary);
+            width: 16px;
+            height: 16px;
+        }
+
+        .bundle-btn {
+            background: var(--dark);
+            color: white;
+            padding: 8px 18px;
+            border: none;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .bundle-btn:hover {
+            background: var(--primary-hover);
+        }
+
+        /* Size Chart Modal Styles */
+        .size-chart-title {
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            margin-top: 25px;
+        }
+
+        .size-chart-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .size-chart-table th, .size-chart-table td {
+            border: 1px solid var(--border);
+            padding: 8px;
+        }
+
+        .size-chart-table th {
+            background-color: var(--primary-light);
+            font-weight: 700;
+            color: var(--primary-hover);
+        }
+
+        /* Slide Out Cart Panel */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 100%;
+            max-width: 420px;
+            height: 100%;
+            background: #ffffff;
+            z-index: 1001;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.1);
+            transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-overlay.active .cart-panel {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            font-size: 1.3rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        .cart-items-wrapper {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            margin-top: 50%;
+            color: var(--muted);
+        }
+
+        .cart-empty i {
+            font-size: 2.5rem;
+            color: var(--primary-accent);
+            margin-bottom: 12px;
+        }
+
+        .cart-item {
+            display: grid;
+            grid-template-columns: 70px 1fr auto;
+            gap: 15px;
+            align-items: center;
+            border-bottom: 1px solid #faf0f2;
+            padding-bottom: 15px;
+        }
+
+        .cart-item-img {
+            width: 70px;
+            height: 90px;
+            border-radius: 6px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
+
+        .cart-item-details h4 {
+            font-size: 0.88rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 220px;
+        }
+
+        .cart-item-meta {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-bottom: 6px;
+        }
+
+        .cart-item-prices {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--primary-hover);
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: var(--muted);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .cart-item-remove:hover {
+            color: var(--primary-hover);
+        }
+
+        .cart-footer {
+            background-color: var(--primary-light);
+            padding: 24px;
+            border-top: 1px solid var(--border);
+        }
+
+        .subtotal-row {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 700;
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+        }
+
+        .checkout-action-btn {
+            width: 100%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .checkout-action-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Success alerts / dynamic toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(150%);
+            background-color: var(--dark);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 0.88rem;
+            font-weight: 600;
+            z-index: 10000;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toast i {
+            color: #4ade80;
+        }
+
+        .toast.active {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Footer properties */
+        footer {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+            padding: 60px 5% 30px 5%;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.2fr repeat(3, 1fr);
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+
+        .footer-column h3 span {
+            color: var(--primary);
+        }
+
+        .footer-column h4 {
+            color: white;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .footer-column p {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: #aaaaaa;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: #aaaaaa;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-top: 50px;
+            padding-top: 25px;
+            border-top: 1px solid #2e2e2e;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #777777;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 1024px) {
+            .shop-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .shop-sidebar {
+                display: none; /* Collapses sidebar for filters on mobile viewports */
+            }
+
+            .pdp-grid {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+
+            .pdp-main-image {
+                height: 420px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-container {
+                width: 100%;
+                margin: 0;
+            }
+
+            .hero-banner {
+                grid-template-columns: 1fr;
+                min-height: auto;
+            }
+
+            .hero-image {
+                display: none; /* Optimize load weight and wrap spacing on tiny viewports */
+            }
+
+            .hero-content {
+                padding: 30px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Upper banner -->
+    <div class="announcement-bar">
+        💥 20% INTRODUCTORY SPECIAL APPLIED TO SELECTED APPAREL! SHOP NOW
+    </div>
+
+    <!-- Sticky Main Header -->
+    <header>
+        <div class="header-top">
+            <a href="#" class="logo" onclick="navigateTo('home')">ZYRO<span>.</span></a>
+            
+            <div class="search-container">
+                <input type="text" id="globalSearchInput" placeholder="Search premium dresses, cotton tops, hoods..." onkeyup="handleSearch(event)">
+                <button onclick="triggerSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <div class="header-action-item">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Profile</span>
+                </div>
+                <div class="header-action-item">
+                    <i class="fa-regular fa-heart"></i>
+                    <span>Wishlist</span>
+                </div>
+                <div class="header-action-item" onclick="toggleCartDrawer(true)">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Bag</span>
+                    <span class="badge" id="cartBadgeCount">0</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-nav">
+            <a id="nav-home" class="active" onclick="navigateTo('home')">Home</a>
+            <a id="nav-shop" onclick="navigateTo('shop')">Shop Catalog</a>
+            <a onclick="navigateTo('shop', 'New Arrivals')">New Arrivals</a>
+            <a onclick="navigateTo('shop', 'Co-ords')">Co-ords</a>
+        </div>
+    </header>
+
+    <!-- SPA Multi-view Body Wrapper -->
+    <main class="main-container">
+
+        <!-- 1. HOME VIEW -->
+        <div id="view-home">
+            <!-- Hero Feature -->
+            <div class="hero-banner">
+                <div class="hero-content">
+                    <span class="tag">Summer Edit '26</span>
+                    <h1>Premium Double PK Linen Cotton Silhouettes</h1>
+                    <p>Designed for absolute luxurious comfort and clean minimalistic beauty. Discover our rose-mélange & soft blush coordination sets.</p>
+                    <a href="#" class="hero-btn" onclick="navigateTo('shop')">Explore Catalog</a>
+                </div>
+                <div class="hero-image"></div>
+            </div>
+
+            <!-- New Arrivals Grid Layout -->
+            <div class="section-headline">
+                <h2>Our Latest Curations</h2>
+                <p>Designed with fine lines, premium blends, and custom hues.</p>
+            </div>
+            <div class="products-grid" id="newArrivalsGrid">
+                <!-- Javascript populated -->
+            </div>
+        </div>
+
+        <!-- 2. CATALOG SHOP VIEW -->
+        <div id="view-shop" style="display: none;">
+            <div class="shop-layout">
+                
+                <!-- Left Sidebar Categories -->
+                <aside class="shop-sidebar">
+                    <h3 class="sidebar-section-title">Womenswear <span><i class="fa-solid fa-sliders"></i></span></h3>
+                    <ul class="category-list" id="categorySidebarList">
+                        <!-- Populated by JS -->
+                    </ul>
+                </aside>
+
+                <!-- Right Catalog grid & sorting -->
+                <div>
+                    <div class="catalog-main-header">
+                        <div class="active-chips" id="activeChipsRow">
+                            <span class="chip">Category: <strong id="activeChipCategoryName">All</strong> <i class="fa-solid fa-xmark"></i></span>
+                        </div>
+                        <div class="sort-select">
+                            <select id="catalogSorter" onchange="sortCatalogProducts()">
+                                <option value="default">Default Sort</option>
+                                <option value="low-high">Price: Low to High</option>
+                                <option value="high-low">Price: High to Low</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-grid" id="catalogGrid">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- 3. DETAILED PRODUCT DETAIL PAGE (PDP) VIEW -->
+        <div id="view-detail" style="display: none;">
+            <div class="pdp-grid" id="pdpRenderOutput">
+                <!-- Populated dynamically based on clicked product -->
+            </div>
+
+            <!-- Related Items Grid below Detail -->
+            <div class="section-headline" style="margin-top: 60px;">
+                <h2>You May Also Like</h2>
+                <p>Complete your aesthetic look with these curated pairings.</p>
+            </div>
+            <div class="products-grid" id="relatedProductsGrid">
+                <!-- Loaded via JS -->
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Side Shopping Cart Drawer Overlay -->
+    <div class="cart-overlay" id="cartOverlay">
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h3>Your Bag</h3>
+                <button class="cart-close" onclick="toggleCartDrawer(false)"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <!-- Items scroll section -->
+            <div class="cart-items-wrapper" id="cartItemsContainer">
+                <!-- Populated dynamically -->
+            </div>
+
+            <div class="cart-footer">
+                <div class="subtotal-row">
+                    <span>Subtotal:</span>
+                    <span id="cartSubtotal">$0.00</span>
+                </div>
+                <button class="checkout-action-btn" onclick="checkoutAction()">Proceed to Secure Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pop Up Action Alert Toast -->
+    <div class="toast" id="actionToast">
+        <i class="fa-solid fa-circle-check"></i>
+        <span id="toastText">Item successfully added to your bag!</span>
+    </div>
+
+    <!-- Brand Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>ZYRO<span>.</span></h3>
+                <p style="margin-top: 15px;">Tailoring sustainable, premium garments designed with clean minimal contours and timeless romantic tones.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Collections</h4>
+                <ul class="footer-links">
+                    <li><a onclick="navigateTo('shop', 'Dresses')">Blush Dresses</a></li>
+                    <li><a onclick="navigateTo('shop', 'Co-ords')">Linen Co-ords</a></li>
+                    <li><a onclick="navigateTo('shop', 'Knitwear')">Knitwear Sweaters</a></li>
+                    <li><a onclick="navigateTo('shop', 'Tops')">Premium Shirts</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Support</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Size Guides</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Returns & Exchanges</a></li>
+                    <li><a href="#">Corporate Inquiry</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Connect</h4>
+                <p>Subscribe to secure early access promotions & weekly style updates.</p>
+                <div style="display: flex; margin-top: 15px;">
+                    <input type="text" placeholder="Email Address" style="padding: 10px; border-radius: 6px 0 0 6px; border: none; font-size: 0.85rem; width: 100%;">
+                    <button style="background: var(--primary); color: white; border: none; padding: 0 15px; border-radius: 0 6px 6px 0; cursor: pointer;"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ZYRO Apparels Ltd. All Rights Reserved.</p>
+            <p>Made with 🤍 for Elegant Minimalists</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Execution Script -->
+    <script>
+        // High Quality Product DB (Styled similar to the fabric specifications in the screenshots)
+        const productDatabase = [
+            {
+                id: 101,
+                title: "Premium Double PK Cotton Polo - Anthra Melange",
+                price: 1090.00,
+                oldPrice: 1250.00,
+                discount: "13%",
+                category: "New Arrivals",
+                desc: "The Polo Shirt is made with premium Double PK fabric, featuring 80% combed organic cotton & 20% polyester for extreme comfort. The shirt is exceptionally soft to the touch making it highly durable for regular wear.",
+                mainImage: "https://images.unsplash.com/photo-1548624149-f7b31668831a?auto=format&fit=crop&w=800&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1548624149-f7b31668831a?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&q=80"
+                ],
+                specs: {
+                    color: "Anthra Melange",
+                    fabricType: "Double PK",
+                    yarnCount: "26/1 Combed Cotton",
+                    composition: "80% Organic Cotton + 20% Polyester",
+                    gsm: "220-230 GSM",
+                    dyeingType: "Reactive Dye"
+                },
+                sizes: ["M", "L", "XL", "2XL"],
+                bundleItem: {
+                    title: "Matching Classic Rose Cotton Shorts",
+                    price: 450.00,
+                    img: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=150&q=80"
+                }
+            },
+            {
+                id: 102,
+                title: "Linen Cotton Cozy Lounge Set - Warm Orchid",
+                price: 1390.00,
+                oldPrice: 1850.00,
+                discount: "25%",
+                category: "Co-ords",
+                desc: "Relaxed-fit luxury loungewear featuring a drop-shoulder design and tapered trousers. Dyed naturally with high durability reactive color lock technology.",
+                mainImage: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80",
+                    "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80"
+                ],
+                specs: {
+                    color: "Blush Orchid",
+                    fabricType: "Premium Linen Blend",
+                    yarnCount: "30/1 Organic Linen",
+                    composition: "60% Linen + 40% Combed Cotton",
+                    gsm: "180 GSM",
+                    dyeingType: "Enzyme Washed Yarn"
+                },
+                sizes: ["S", "M", "L", "XL"],
+                bundleItem: {
+                    title: "Minimalist Gold Hoop Earrings Set",
+                    price: 290.00,
+                    img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=150&q=80"
+                }
+            },
+            {
+                id: 103,
+                title: "Structured Modern Blazer Gown - Desert Rose",
+                price: 2200.00,
+                oldPrice: null,
+                discount: null,
+                category: "Dresses",
+                desc: "An upscale hybrid tailored piece perfect for high-profile client dinners. Strong structured shoulder profile with dynamic single-line rose-gilded waist cinch.",
+                mainImage: "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1595777457583-95e059d581b8?auto=format&fit=crop&w=800&q=80"
+                ],
+                specs: {
+                    color: "Desert Rose Silk",
+                    fabricType: "Tailored Premium Crepe",
+                    yarnCount: "Double Twisted Worsted Silk",
+                    composition: "50% Heavy Silk + 50% Rayon",
+                    gsm: "280 GSM",
+                    dyeingType: "Reactive Dye"
+                },
+                sizes: ["S", "M", "L"],
+                bundleItem: {
+                    title: "Rose Quartz Gold Charm Bracelet",
+                    price: 590.00,
+                    img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=150&q=80"
+                }
+            },
+            {
+                id: 104,
+                title: "Cropped Knit Balloon Pullover Sweater",
+                price: 1190.00,
+                oldPrice: 1490.00,
+                discount: "20%",
+                category: "Knitwear",
+                desc: "Ultra lightweight knit constructed with open weaves for optimal breathability. Designed to create a relaxed, puffy cocoon silhouette.",
+                mainImage: "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?auto=format&fit=crop&w=800&q=80"
+                ],
+                specs: {
+                    color: "Off-White Cloud",
+                    fabricType: "Rib Knit Cotton",
+                    yarnCount: "Thick Soft Cotton Blend",
+                    composition: "90% Organic Cotton + 10% Nylon Wool",
+                    gsm: "310 GSM",
+                    dyeingType: "Azo-Free Premium Dye"
+                },
+                sizes: ["M", "L", "XL"],
+                bundleItem: {
+                    title: "Ribbed Lounge Pants Knit",
+                    price: 790.00,
+                    img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=150&q=80"
+                }
+            },
+            {
+                id: 105,
+                title: "Linen Utility Belted Shirtdress",
+                price: 1290.00,
+                oldPrice: 1550.00,
+                discount: "16%",
+                category: "Dresses",
+                desc: "Breathable heavy linen features full length wood-textured front closures and double utilitarian utility pockets.",
+                mainImage: "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?auto=format&fit=crop&w=800&q=80"
+                ],
+                specs: {
+                    color: "Dusty Cedar",
+                    fabricType: "Heavy Flax Linen",
+                    yarnCount: "40s High Count Flax",
+                    composition: "100% French Flax Linen",
+                    gsm: "210 GSM",
+                    dyeingType: "Enzyme Sandwashed"
+                },
+                sizes: ["S", "M", "L", "XL"],
+                bundleItem: {
+                    title: "Handwoven Jute Summer Tote",
+                    price: 690.00,
+                    img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=150&q=80"
+                }
+            },
+            {
+                id: 106,
+                title: "Silk-Blend Comfort Tee - Petal Blush",
+                price: 750.00,
+                oldPrice: 890.00,
+                discount: "15%",
+                category: "Tops",
+                desc: "An upgrade to daily basics. Feels like cool air on skin with a gorgeous low-profile satin luster.",
+                mainImage: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80",
+                images: [
+                    "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?auto=format&fit=crop&w=800&q=80"
+                ],
+                specs: {
+                    color: "Petal Blush",
+                    fabricType: "Silk Jersey",
+                    yarnCount: "32/1 Combed Blend",
+                    composition: "30% Mulberry Silk + 70% Combed Cotton",
+                    gsm: "160 GSM",
+                    dyeingType: "Silicon Soft Bio washed"
+                },
+                sizes: ["S", "M", "L", "XL", "2XL"],
+                bundleItem: {
+                    title: "Silver Chain Choker",
+                    price: 250.00,
+                    img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=150&q=80"
+                }
+            }
+        ];
+
+        // Global Cart State Array
+        let shoppingBag = [];
+
+        // Navigation state managers
+        let activeTabCategory = "All";
+        let detailPageActiveSize = "M";
+        let detailPageActiveQty = 1;
+        let pdpSelectedProduct = null;
+
+        // Initialize App Views
+        window.onload = function() {
+            renderHomepageGrid();
+            renderSidebarCategories();
+            renderCatalogGrid();
+            
+            // Event listener to dismiss cart drawer when overlay area outside panel clicked
+            document.getElementById('cartOverlay').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    toggleCartDrawer(false);
+                }
+            });
+        };
+
+        // Tab SPA Page Router
+        function navigateTo(targetView, customCategoryFilter = null) {
+            // Hide all routing pages
+            document.getElementById('view-home').style.display = 'none';
+            document.getElementById('view-shop').style.display = 'none';
+            document.getElementById('view-detail').style.display = 'none';
+
+            // Reset header navigation highlights
+            document.getElementById('nav-home').classList.remove('active');
+            document.getElementById('nav-shop').classList.remove('active');
+
+            if (targetView === 'home') {
+                document.getElementById('view-home').style.display = 'block';
+                document.getElementById('nav-home').classList.add('active');
+            } else if (targetView === 'shop') {
+                document.getElementById('view-shop').style.display = 'block';
+                document.getElementById('nav-shop').classList.add('active');
+                if (customCategoryFilter) {
+                    filterCategory(customCategoryFilter);
+                } else {
+                    filterCategory('All');
+                }
+            } else if (targetView === 'detail') {
+                document.getElementById('view-detail').style.display = 'block';
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Render Home View Grid
+        function renderHomepageGrid() {
+            const container = document.getElementById('newArrivalsGrid');
+            container.innerHTML = "";
+            
+            // Pull first 4 products for homepage highlights
+            const highlights = productDatabase.slice(0, 4);
+            highlights.forEach(prod => {
+                container.innerHTML += buildCardHTML(prod);
+            });
+        }
+
+        // Render Sidebar Category Options & Item Count
+        function renderSidebarCategories() {
+            const container = document.getElementById('categorySidebarList');
+            container.innerHTML = "";
+
+            const categories = ["All", "New Arrivals", "Co-ords", "Dresses", "Knitwear", "Tops"];
+            
+            categories.forEach(cat => {
+                let count = 0;
+                if (cat === "All") {
+                    count = productDatabase.length;
+                } else {
+                    count = productDatabase.filter(p => p.category === cat).length;
+                }
+
+                const isActive = (cat === activeTabCategory) ? "active" : "";
+                container.innerHTML += `
+                    <li class="category-item ${isActive}" onclick="filterCategory('${cat}')">
+                        <span>${cat}</span>
+                        <span class="category-count">${count}</span>
+                    </li>
+                `;
+            });
+        }
+
+        // Card Element HTML generator
+        function buildCardHTML(prod) {
+            const badge = prod.discount ? `<span class="card-discount-badge">-${prod.discount}</span>` : "";
+            const oldPriceTag = prod.oldPrice ? `<span class="old-price">৳${prod.oldPrice.toFixed(2)}</span>` : "";
+            
+            return `
+                <div class="card" onclick="openDetailPage(${prod.id})">
+                    <div class="card-img-holder">
+                        ${badge}
+                        <img src="${prod.mainImage}" alt="${prod.title}">
+                        <button class="card-quick-add" onclick="event.stopPropagation(); quickAddAction(${prod.id})">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">${prod.title}</h3>
+                        <div class="card-prices">
+                            <span class="current-price">৳${prod.price.toFixed(2)}</span>
+                            ${oldPriceTag}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render Catalog Grid with Category Filter Constraints
+        function renderCatalogGrid() {
+            const container = document.getElementById('catalogGrid');
+            container.innerHTML = "";
+
+            let source = productDatabase;
+            if (activeTabCategory !== "All") {
+                source = productDatabase.filter(p => p.category === activeTabCategory);
+            }
+
+            if (source.length === 0) {
+                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--muted); padding: 40px;">No products match this category selection.</div>`;
+                return;
+            }
+
+            source.forEach(prod => {
+                container.innerHTML += buildCardHTML(prod);
+            });
+        }
+
+        // Active filter toggles
+        function filterCategory(catName) {
+            activeTabCategory = catName;
+            document.getElementById('activeChipCategoryName').innerText = catName;
+            
+            // Re-render
+            renderSidebarCategories();
+            renderCatalogGrid();
+        }
+
+        // Handle sorting options
+        function sortCatalogProducts() {
+            const sorterVal = document.getElementById('catalogSorter').value;
+            let currentSet = [...productDatabase];
+
+            if (activeTabCategory !== "All") {
+                currentSet = currentSet.filter(p => p.category === activeTabCategory);
+            }
+
+            if (sorterVal === "low-high") {
+                currentSet.sort((a, b) => a.price - b.price);
+            } else if (sorterVal === "high-low") {
+                currentSet.sort((a, b) => b.price - a.price);
+            }
+
+            const container = document.getElementById('catalogGrid');
+            container.innerHTML = "";
+            currentSet.forEach(prod => {
+                container.innerHTML += buildCardHTML(prod);
+            });
+        }
+
+        // Global Search Logic 
+        function handleSearch(event) {
+            if (event.key === "Enter") {
+                triggerSearch();
+            }
+        }
+
+        function triggerSearch() {
+            const inputVal = document.getElementById('globalSearchInput').value.toLowerCase().trim();
+            if (!inputVal) return;
+
+            navigateTo('shop');
+            activeTabCategory = "All";
+            document.getElementById('activeChipCategoryName').innerText = `Search: "${inputVal}"`;
+
+            const results = productDatabase.filter(p => 
+                p.title.toLowerCase().includes(inputVal) || 
+                p.desc.toLowerCase().includes(inputVal) ||
+                p.category.toLowerCase().includes(inputVal)
+            );
+
+            const container = document.getElementById('catalogGrid');
+            container.innerHTML = "";
+            
+            if (results.length === 0) {
+                container.innerHTML = `<div style="grid-column: 1/-1; text-align: center; color: var(--muted); padding: 40px;">No products found matching "${inputVal}".</div>`;
+                return;
+            }
+
+            results.forEach(prod => {
+                container.innerHTML += buildCardHTML(prod);
+            });
+        }
+
+        // Open Product Detail Page Mode
+        function openDetailPage(id) {
+            const product = productDatabase.find(p => p.id === id);
+            if (!product) return;
+
+            pdpSelectedProduct = product;
+            detailPageActiveSize = product.sizes[0]; // Set default active size pill
+            detailPageActiveQty = 1;
+
+            navigateTo('detail');
+
+            const pdpOutput = document.getElementById('pdpRenderOutput');
+
+            // Generate size pills
+            const sizePillsHTML = product.sizes.map(size => `
+                <button class="size-chip ${size === detailPageActiveSize ? 'active' : ''}" onclick="selectDetailSize('${size}', this)">
+                    ${size}
+                </button>
+            `).join('');
+
+            // Generate Thumbnail images HTML
+            const thumbImagesHTML = product.images.map((img, i) => `
+                <div class="pdp-thumb ${i === 0 ? 'active' : ''}" onclick="swapPdpDisplayImage('${img}', this)">
+                    <img src="${img}" alt="Preview View">
+                </div>
+            `).join('');
+
+            pdpOutput.innerHTML = `
+                <!-- Gallery Columns -->
+                <div class="pdp-gallery">
+                    <div class="pdp-main-image">
+                        <img id="pdpDisplayImg" src="${product.mainImage}" alt="${product.title}">
+                    </div>
+                    <div class="pdp-thumbnails">
+                        ${thumbImagesHTML}
+                    </div>
+                </div>
+
+                <!-- Info columns -->
+                <div class="pdp-info">
+                    <span class="pdp-brand">${product.category} COLLECTION</span>
+                    <h1 class="pdp-title">${product.title}</h1>
+                    
+                    <div class="pdp-price-area">
+                        <span class="pdp-price">৳${product.price.toFixed(2)}</span>
+                        ${product.oldPrice ? `<span class="pdp-price-old">৳${product.oldPrice.toFixed(2)}</span>` : ''}
+                    </div>
+
+                    <p class="pdp-desc">${product.desc}</p>
+
+                    <!-- Sizes Selector Section -->
+                    <div class="sizes-group">
+                        <h4 class="option-title">Select Size:</h4>
+                        <div class="size-chips">
+                            ${sizePillsHTML}
+                        </div>
+                    </div>
+
+                    <!-- Actions qty/cart -->
+                    <h4 class="option-title">Quantity:</h4>
+                    <div class="actions-block">
+                        <div class="qty-adjuster">
+                            <button onclick="adjustDetailQty(-1)"><i class="fa-solid fa-minus"></i></button>
+                            <span id="detailQtyBox">1</span>
+                            <button onclick="adjustDetailQty(1)"><i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <button class="add-bag-btn" onclick="addActiveProductToBag()">
+                            <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+                        </button>
+                    </div>
+
+                    <!-- Badges Row -->
+                    <div class="trust-badges">
+                        <div class="trust-card">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            <strong>7-Day Returns</strong>
+                            Easy exchange policy
+                        </div>
+                        <div class="trust-card">
+                            <i class="fa-solid fa-circle-check"></i>
+                            <strong>100% Quality</strong>
+                            Premium combed blends
+                        </div>
+                        <div class="trust-card">
+                            <i class="fa-solid fa-truck-fast"></i>
+                            <strong>Fast Shipping</strong>
+                            Dispatched within 24hr
+                        </div>
+                    </div>
+
+                    <!-- Specifications Table Grid -->
+                    <h4 class="option-title" style="margin-top: 25px;">Product Specifications:</h4>
+                    <table class="specs-table">
+                        <tr>
+                            <td class="label-td">Fabric Type</td>
+                            <td class="value-td">${product.specs.fabricType}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-td">Composition</td>
+                            <td class="value-td">${product.specs.composition}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-td">Fabric Weight</td>
+                            <td class="value-td">${product.specs.gsm}</td>
+                        </tr>
+                        <tr>
+                            <td class="label-td">Dyeing Profile</td>
+                            <td class="value-td">${product.specs.dyeingType}</td>
+                        </tr>
+                    </table>
+
+                    <!-- Frequently Bought Together Bundle UI Box -->
+                    <div class="bundle-box">
+                        <div class="bundle-box-title">Frequently Bought Together</div>
+                        <div class="bundle-combo">
+                            <img src="${product.mainImage}" class="bundle-item-avatar" alt="Current Item">
+                            <span class="plus-sign">+</span>
+                            <img src="${product.bundleItem.img}" class="bundle-item-avatar" alt="Bundle Item">
+                            
+                            <div class="bundle-details">
+                                <p style="font-weight: 700; color: var(--dark);">${product.bundleItem.title}</p>
+                                <p style="color: var(--primary-hover); font-weight: 700;">৳${product.bundleItem.price.toFixed(2)}</p>
+                            </div>
+                        </div>
+                        <div class="bundle-action-row">
+                            <label class="bundle-check-label">
+                                <input type="checkbox" id="bundleCheckInput" checked onchange="handleBundleCheckValue()"> Add complementary item bundle
+                            </label>
+                            <button class="bundle-btn" onclick="addBundleComboToBag()">Add Combo To Bag</button>
+                        </div>
+                    </div>
+
+                    <!-- Size Chart Table Spec (Screenshot 3 match) -->
+                    <div class="size-chart-title">Size Chart - Inches (Expected Deviation < 3%)</div>
+                    <table class="size-chart-table">
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Chest (round)</th>
+                                <th>Length</th>
+                                <th>Sleeve</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>S</td>
+                                <td>38</td>
+                                <td>27</td>
+                                <td>7.75</td>
+                            </tr>
+                            <tr>
+                                <td>M</td>
+                                <td>40</td>
+                                <td>28</td>
+                                <td>8.25</td>
+                            </tr>
+                            <tr>
+                                <td>L</td>
+                                <td>42</td>
+                                <td>29</td>
+                                <td>8.75</td>
+                            </tr>
+                            <tr>
+                                <td>XL</td>
+                                <td>44</td>
+                                <td>30</td>
+                                <td>9.25</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            `;
+
+            renderRelatedItems(product.category, product.id);
+        }
+
+        // Swap detail gallery image focus
+        function swapPdpDisplayImage(imageUrl, thumbElement) {
+            document.getElementById('pdpDisplayImg').src = imageUrl;
+            
+            const thumbs = document.querySelectorAll('.pdp-thumb');
+            thumbs.forEach(el => el.classList.remove('active'));
+            thumbElement.classList.add('active');
+        }
+
+        // Selection size in detail view state
+        function selectDetailSize(size, sizeBtnElement) {
+            detailPageActiveSize = size;
+            
+            const chips = document.querySelectorAll('.size-chip');
+            chips.forEach(el => el.classList.remove('active'));
+            sizeBtnElement.classList.add('active');
+        }
+
+        // Adjust Detail quantities
+        function adjustDetailQty(amount) {
+            detailPageActiveQty = Math.max(1, detailPageActiveQty + amount);
+            document.getElementById('detailQtyBox').innerText = detailPageActiveQty;
+        }
+
+        // Pop Related list
+        function renderRelatedItems(cat, currentId) {
+            const container = document.getElementById('relatedProductsGrid');
+            container.innerHTML = "";
+
+            const matches = productDatabase.filter(p => p.category === cat && p.id !== currentId).slice(0, 3);
+            
+            if (matches.length === 0) {
+                // Grab fallback items
+                const fallback = productDatabase.filter(p => p.id !== currentId).slice(0, 3);
+                fallback.forEach(prod => {
+                    container.innerHTML += buildCardHTML(prod);
+                });
+                return;
+            }
+
+            matches.forEach(prod => {
+                container.innerHTML += buildCardHTML(prod);
+            });
+        }
+
+        // Trigger simple toast alerts
+        function triggerToastAlert(message) {
+            const toast = document.getElementById('actionToast');
+            document.getElementById('toastText').innerText = message;
+            toast.classList.add('active');
+
+            setTimeout(() => {
+                toast.classList.remove('active');
+            }, 3000);
+        }
+
+        // Toggle Right Cart Sidebar Drawer
+        function toggleCartDrawer(open) {
+            const overlay = document.getElementById('cartOverlay');
+            if (open) {
+                overlay.classList.add('active');
+            } else {
+                overlay.classList.remove('active');
+            }
+        }
+
+        // Add to Bag Actions
+        function addActiveProductToBag() {
+            if (!pdpSelectedProduct) return;
+
+            addItemToBagEngine(
+                pdpSelectedProduct.id, 
+                pdpSelectedProduct.title, 
+                pdpSelectedProduct.price, 
+                pdpSelectedProduct.mainImage, 
+                detailPageActiveSize, 
+                detailPageActiveQty
+            );
+            
+            toggleCartDrawer(true);
+        }
+
+        // Quick add action from homepage card
+        function quickAddAction(id) {
+            const product = productDatabase.find(p => p.id === id);
+            if (!product) return;
+
+            addItemToBagEngine(product.id, product.title, product.price, product.mainImage, "M", 1);
+            triggerToastAlert(`Successfully added 1x ${product.title} to Bag!`);
+        }
+
+        // Bundle combo adding
+        function addBundleComboToBag() {
+            if (!pdpSelectedProduct) return;
+
+            // Add main product
+            addItemToBagEngine(
+                pdpSelectedProduct.id, 
+                pdpSelectedProduct.title, 
+                pdpSelectedProduct.price, 
+                pdpSelectedProduct.mainImage, 
+                detailPageActiveSize, 
+                detailPageActiveQty
+            );
+
+            // Add supplementary bundle item if checked
+            const checkbox = document.getElementById('bundleCheckInput');
+            if (checkbox && checkbox.checked) {
+                addItemToBagEngine(
+                    9990 + pdpSelectedProduct.id, // Generate isolated synthetic ID
+                    pdpSelectedProduct.bundleItem.title, 
+                    pdpSelectedProduct.bundleItem.price, 
+                    pdpSelectedProduct.bundleItem.img, 
+                    "FREE SIZE", 
+                    1
+                );
+            }
+
+            toggleCartDrawer(true);
+        }
+
+        function handleBundleCheckValue() {
+            // Placeholder dynamic calculations of total combo values can be triggered here
+        }
+
+        // Add item state manipulator
+        function addItemToBagEngine(id, title, price, img, size, qty) {
+            // Detect duplicates of same variant identity
+            const existingIndex = shoppingBag.findIndex(item => item.id === id && item.size === size);
+
+            if (existingIndex > -1) {
+                shoppingBag[existingIndex].qty += qty;
+            } else {
+                shoppingBag.push({
+                    id: id,
+                    title: title,
+                    price: price,
+                    img: img,
+                    size: size,
+                    qty: qty
+                });
+            }
+
+            updateGlobalCartUI();
+        }
+
+        // Remove single item out of bag
+        function removeItemFromBag(index) {
+            shoppingBag.splice(index, 1);
+            updateGlobalCartUI();
+        }
+
+        // Recompute bag UI, math details & counts
+        function updateGlobalCartUI() {
+            const countBadge = document.getElementById('cartBadgeCount');
+            const totalCount = shoppingBag.reduce((sum, item) => sum + item.qty, 0);
+            countBadge.innerText = totalCount;
+
+            const container = document.getElementById('cartItemsContainer');
+            container.innerHTML = "";
+
+            if (shoppingBag.length === 0) {
+                container.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <p>Your shopping bag is empty</p>
+                    </div>
+                `;
+                document.getElementById('cartSubtotal').innerText = "৳0.00";
+                return;
+            }
+
+            shoppingBag.forEach((item, index) => {
+                container.innerHTML += `
+                    <div class="cart-item">
+                        <img src="${item.img}" class="cart-item-img" alt="${item.title}">
+                        <div class="cart-item-details">
+                            <h4>${item.title}</h4>
+                            <div class="cart-item-meta">Size: ${item.size} &nbsp;|&nbsp; Qty: ${item.qty}</div>
+                            <div class="cart-item-prices">৳${(item.price * item.qty).toFixed(2)}</div>
+                        </div>
+                        <button class="cart-item-remove" onclick="removeItemFromBag(${index})">
+                            <i class="fa-regular fa-trash-can"></i>
+                        </button>
+                    </div>
+                `;
+            });
+
+            const subtotal = shoppingBag.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            document.getElementById('cartSubtotal').innerText = `৳${subtotal.toFixed(2)}`;
+        }
+
+        // Checkout action simulation
+        function checkoutAction() {
+            if (shoppingBag.length === 0) {
+                triggerToastAlert("Your bag is empty! Add products first.");
+                return;
+            }
+
+            triggerToastAlert("Order completed successfully! Thank you for shopping with ZYRO.");
+            shoppingBag = [];
+            updateGlobalCartUI();
+            
+            setTimeout(() => {
+                toggleCartDrawer(false);
+                navigateTo('home');
+            }, 1800);
+        }
+    </script>
+</body>
+</html>
