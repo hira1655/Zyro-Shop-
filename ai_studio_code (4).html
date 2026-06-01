@@ -2144,3 +2144,31 @@
     </script>
 </body>
 </html>
+<script>
+fetch("products.json")
+  .then(res => res.json())
+  .then(data => {
+    let html = "";
+
+    data.forEach(p => {
+      html += `
+        <div class="card">
+          <div class="card-img-holder">
+            <img src="${p.image}">
+          </div>
+
+          <div class="card-body">
+            <div class="card-title">${p.name}</div>
+
+            <div class="card-prices">
+              <div class="current-price">৳${p.price}</div>
+              <div class="old-price">৳${p.oldPrice}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+
+    document.getElementById("storeGrid").innerHTML = html;
+  });
+</script>
